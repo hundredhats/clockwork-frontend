@@ -1,12 +1,13 @@
 <template>
   <div class="project">
-    <h2>Project Name</h2>
+    <h2>{{ name }}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Project'
+  name: 'Project',
+  props: ['name']
 }
 </script>
 
@@ -14,6 +15,7 @@ export default {
 .project {
   border: 1px solid #2c3e50;
   padding: 20px;
+  margin: 20px 0;
 }
 
 h2 {

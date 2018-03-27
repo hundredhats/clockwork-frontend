@@ -33,9 +33,12 @@ nav {
   width: 59%;
 }
 
+ul {
+  list-style: none;
+}
+
 li {
   display: inline-block;
-  list-style: none;
   padding: 0 10px;
 }
 

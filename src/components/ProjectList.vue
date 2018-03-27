@@ -2,17 +2,35 @@
   <div>
     <h1>Projects</h1>
 
-    <Project/>
+    <Project
+      v-for="project of projects"
+      :key="project.id"
+      :name="project.name" />
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import Project from '@/components/Project'
 
 export default {
   name: 'ProjectList',
+  data () {
+    return {
+      projects: []
+    }
+  },
   components: {
     Project
+  },
+  created () {
+    axios.get('http://localhost:3000/projects')
+      .then(response => {
+        this.projects = response.data.projects
+      })
+      .catch(e => {
+        console.error(e)
+      })
   }
 }
 </script>

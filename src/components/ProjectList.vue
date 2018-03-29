@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Project from '@/components/Project'
 
 export default {
@@ -24,7 +23,7 @@ export default {
     Project
   },
   created () {
-    axios.get('http://localhost:3000/projects')
+    this.axios.get('/projects')
       .then(response => {
         this.projects = response.data.projects
       })
